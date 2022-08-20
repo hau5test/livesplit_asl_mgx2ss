@@ -28,6 +28,50 @@ state("pcsx2") {
 	// separate addresses for each version, with a version prefix
     // EU
 	// timers
+    uint US_GameTime: 				0x123E168, 0xDF0;
+	uint US_ConsoleTime: 			0x123E16C, 0x1D0;
+    uint US_GameState: 				0x123E168, 0xF94;
+	uint US_CheckpointFlag:			0x123E168, 0xCD0;
+	// variables for state and map location
+	uint US_MapVal:					0x1243658, 0xBDC;
+	uint US_ScreenVal:				0x123E16C, 0x60;
+	uint US_FloorNumber:			0x123E16C, 0x118;
+	// snake relevant values
+	uint US_HealthUpgrade:			0x1243658, 0xBC4;
+	uint US_Health: 				0x1243658, 0xBC8;
+	uint US_MaxHealth: 				0x1243658, 0xBCC;
+	uint US_Oxygen: 				0x1243658, 0xBD0;
+	int US_SnakeXAxis:				0x1243658, 0xC30;
+	int US_SnakeYAxis:				0x1243658, 0xC34;
+	// score screen
+	uint US_Saves: 					0x123E168, 0xE04;
+	uint US_Continues: 				0x123E168, 0xE08;
+	uint US_ContinuesPerCheckpoint: 0x123E168, 0xE0C;
+	uint US_Alerts: 				0x123E168, 0xDFC;
+	uint US_Kills: 					0x123E168, 0xDF8;
+	uint US_Rations: 				0x123E168, 0xDF4;
+	// inventory values
+	uint US_PistolAmmo: 			0x1243658, 0xB8C;
+	uint US_SMGAmmo: 				0x1243658, 0xB90;
+	uint US_Grenades: 				0x1243658, 0xB94;
+	uint US_StingerMissiles: 		0x1243658, 0xB98;
+	uint US_RCMissiles: 			0x1243658, 0xB9C;
+	uint US_PlasticExplosives: 		0x1243658, 0xBA0;
+	uint US_Mines: 					0x1243658, 0xBA4;
+	uint US_CamoMats: 				0x1243658, 0xBA8;
+	uint US_MouseAmmo: 				0x1243658, 0xBAC;
+	uint US_RationsB1Held: 			0x1243658, 0xBB0;
+	uint US_RationsB2Held: 			0x1243658, 0xBB4;
+	uint US_RationsB3Held: 			0x1243658, 0xBB8;
+	// menu pointer position
+	uint US_ActiveWeapon:			0x1243658, 0xB78;
+	uint US_ActiveItem:				0x1243658, 0xB7C;
+	uint US_WeaponsUpdate:			0x1243658, 0xB80;
+	uint US_ItemsUpdate1:			0x1243658, 0xB84;
+	uint US_ItemsUpdate2:			0x1243658, 0xB88;
+
+    // EU
+	// timers
     uint EU_GameTime: 				0x123E174, 0xB28;
 	uint EU_ConsoleTime: 			0x123E174, 0xF08;
     uint EU_GameState: 				0x123E174, 0xCCC;
@@ -46,29 +90,28 @@ state("pcsx2") {
 	// score screen
     uint EU_Saves: 					0x123E174, 0xB3C;
 	uint EU_Continues: 				0x123E174, 0xB40;
+	uint EU_ContinuesPerCheckpoint: 0x123E174, 0xB44;
 	uint EU_Alerts: 				0x123E174, 0xB34;
 	uint EU_Kills: 					0x123E174, 0xB30;
 	uint EU_Rations: 				0x123E174, 0xB2C;
 	// inventory values
+	uint EU_PistolAmmo: 			0x1243664, 0xC3C;
+	uint EU_SMGAmmo: 				0x1243664, 0xC40;
+	uint EU_Grenades: 				0x1243664, 0xC50;
+	uint EU_StingerMissiles: 		0x1243664, 0xC48;
+	uint EU_RCMissiles: 			0x1243664, 0xC48;
+	uint EU_PlasticExplosives: 		0x1243664, 0xC50;
+	uint EU_Mines: 					0x1243664, 0xC54;
+	uint EU_MouseAmmo: 				0x1243664, 0xBC;
 	uint EU_RationsB1Held: 			0x1243664, 0xC64;
 	uint EU_RationsB2Held: 			0x1243664, 0xC68;
 	uint EU_RationsB3Held: 			0x1243664, 0xC6C;
-	uint EU_PlasticExplosives: 		0x1243664, 0xC50;
-	uint EU_Mines: 					0x1243664, 0xC54;
-	uint EU_StingerMissiles: 		0x1243664, 0xC48;
-	uint EU_RocketLauncherAmmo: 	0x1243664, 0xC60;
-	uint EU_RobotMouseAmmo: 		0x1243664, 0xBC;
-	uint EU_SMGAmmo: 				0x1243664, 0xC40;
-	uint EU_PistolAmmo: 			0x1243664, 0xC3C;
 	// menu pointer position
-	uint EU_ActiveItem:				0x1243664, 0xC2C;
 	uint EU_ActiveWeapon:			0x1243664, 0xC28;
+	uint EU_ActiveItem:				0x1243664, 0xC2C;
 	uint EU_WeaponsUpdate:			0x1243664, 0xC30;
 	uint EU_ItemsUpdate1:			0x1243664, 0xC34;
 	uint EU_ItemsUpdate2:			0x1243664, 0xC38;
-	uint EU_RationsFrozenTimer:		0x1243664, 0xC84;
-	uint EU_BroochFrozenTimer:		0x1243664, 0xC88;
-	uint EU_OwlHatchingTimer:		0x1243664, 0xCA4;
 }
 
 startup {
@@ -137,7 +180,6 @@ startup {
 	settings.Add("green_barret", true, "Finished Green Barret Section", "story_splits");
 	settings.Add("card4_pickup", true, "Met Holly first time (card 4)", "story_splits");
 	settings.Add("card5_pickup", true, "Met Dr. Madnar first time (card 5)", "story_splits");
-	settings.Add("brooch_frozen", true, "Froze Brooch", "story_splits");
 	settings.Add("card7_pickup", true, "Fought the four horsemen", "story_splits");
 	settings.Add("owl_hatched", true, "Owl Hatched", "story_splits");
 	settings.Add("reached_underground", true, "Reached Underground After Dr. Madnar", "story_splits");
@@ -235,27 +277,26 @@ update {
 			"SnakeYAxis",
 			"Saves",
 			"Continues",
+			"ContinuesPerCheckpoint",
 			"Alerts",
 			"Kills",
 			"Rations",
+			"PistolAmmo",
+			"SMGAmmo",
+			"Grenades",
+			"StingerMissiles",
+			"RCMissiles",
+			"PlasticExplosives",
+			"Mines",
+			"MouseAmmo",
 			"RationsB1Held",
 			"RationsB2Held",
 			"RationsB3Held",
-			"PlasticExplosives",
-			"Mines",
-			"StingerMissiles",
-			"RocketLauncherAmmo",
-			"RobotMouseAmmo",
-			"SMGAmmo",
-			"PistolAmmo",
-			"ActiveItem",
 			"ActiveWeapon",
+			"ActiveItem",
 			"WeaponsUpdate",
 			"ItemsUpdate1",
-			"ItemsUpdate2",
-			"RationsFrozenTimer",
-			"BroochFrozenTimer",
-			"OwlHatchingTimer"
+			"ItemsUpdate2"
 			};
 
 		// (placeholder) have some logic to work out the version and create the prefix
@@ -455,7 +496,6 @@ split {
 	var D = vars.D;
 
 	if (current.GameState == 24 && old.GameState != 24 && settings["final_split"]) return true;
-	if (current.BroochFrozenTimer > 15 && old.BroochFrozenTimer == 15 && settings["brooch_frozen"]) return true;
 
 
 	// as long as we're not on the post Metal Gear D / Big Boss Checkpoint
