@@ -31,11 +31,8 @@ state("pcsx2") {
     uint EU_GameTime: 				0x123E174, 0xB28;
 	uint EU_ConsoleTime: 			0x123E174, 0xF08;
     uint EU_GameState: 				0x123E174, 0xCCC;
-    uint EU_GameState2: 			0x123E174, 0xCD0;
 	uint EU_CheckpointFlag:			0x123E174, 0xA08;
 	// variables for state and map location
-	uint EU_RadarYCoord: 			0x123E174, 0xDFC;
-	uint EU_RadarXCoord: 			0x123E174, 0xE00;
 	uint EU_MapVal:					0x1243664, 0xC8C;
 	uint EU_ScreenVal:				0x123E174, 0xE04;
 	uint EU_FloorNumber:			0x123E174, 0xE50;
@@ -46,7 +43,6 @@ state("pcsx2") {
 	uint EU_Oxygen: 				0x1243664, 0xC80;
 	int EU_SnakeXAxis:				0x1243664, 0xCE0;
 	int EU_SnakeYAxis:				0x1243664, 0xCE4;
-	int EU_SnakeLookingDirection:	0x1243664, 0xC24;
 	// score screen
     uint EU_Saves: 					0x123E174, 0xB3C;
 	uint EU_Continues: 				0x123E174, 0xB40;
@@ -65,8 +61,6 @@ state("pcsx2") {
 	uint EU_SMGAmmo: 				0x1243664, 0xC40;
 	uint EU_PistolAmmo: 			0x1243664, 0xC3C;
 	// menu pointer position
-	uint EU_InventoryPointerX:		0x123E174, 0xE1C;
-	uint EU_InventoryPointerY:		0x123E174, 0xE20;
 	uint EU_ActiveItem:				0x1243664, 0xC2C;
 	uint EU_ActiveWeapon:			0x1243664, 0xC28;
 	uint EU_WeaponsUpdate:			0x1243664, 0xC30;
@@ -75,7 +69,6 @@ state("pcsx2") {
 	uint EU_RationsFrozenTimer:		0x1243664, 0xC84;
 	uint EU_BroochFrozenTimer:		0x1243664, 0xC88;
 	uint EU_OwlHatchingTimer:		0x1243664, 0xCA4;
-	uint EU_AlertStatus:			0x123E174, 0xDA8;
 }
 
 startup {
@@ -230,10 +223,7 @@ update {
 			"GameTime",
 			"ConsoleTime",
 			"GameState",
-			"GameState2",
 			"CheckpointFlag",
-			"RadarYCoord",
-			"RadarXCoord",
 			"MapVal",
 			"ScreenVal",
 			"FloorNumber",
@@ -243,7 +233,6 @@ update {
 			"Oxygen",
 			"SnakeXAxis",
 			"SnakeYAxis",
-			"SnakeLookingDirection",
 			"Saves",
 			"Continues",
 			"Alerts",
@@ -259,8 +248,6 @@ update {
 			"RobotMouseAmmo",
 			"SMGAmmo",
 			"PistolAmmo",
-			"InventoryPointerX",
-			"InventoryPointerY",
 			"ActiveItem",
 			"ActiveWeapon",
 			"WeaponsUpdate",
@@ -268,8 +255,7 @@ update {
 			"ItemsUpdate2",
 			"RationsFrozenTimer",
 			"BroochFrozenTimer",
-			"OwlHatchingTimer",
-			"AlertStatus"
+			"OwlHatchingTimer"
 			};
 
 		// (placeholder) have some logic to work out the version and create the prefix
