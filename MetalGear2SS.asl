@@ -26,7 +26,97 @@ state("pcsx2") {
 	string6 discNumber: 0x2C7979D;
 
 	// separate addresses for each version, with a version prefix
-    // EU
+    // Japan - Subsistence Disc
+	// timers
+    uint JSub_GameTime: 				0x123E168, 0x4D8;
+	uint JSub_ConsoleTime: 				0x123E168, 0x8B8;
+    uint JSub_GameState: 				0x123E168, 0x67C;
+	uint JSub_CheckpointFlag:			0x123E168, 0x3B8;
+	// variables for state and map location
+	uint JSub_MapVal:					0x124291C, 0xB8C;
+	uint JSub_ScreenVal:				0x123E168, 0x748;
+	uint JSub_FloorNumber:				0x123E168, 0x780;
+	// snake relevant values
+	uint JSub_HealthUpgrade:			0x124291C, 0xB74;
+	uint JSub_Health: 					0x124291C, 0xB78;
+	uint JSub_MaxHealth: 				0x124291C, 0xB7C;
+	uint JSub_Oxygen: 					0x124291C, 0xB80;
+	int JSub_SnakeXAxis:				0x124291C, 0xBE0;
+	int JSub_SnakeYAxis:				0x124291C, 0xBE4;
+	// score screen
+	uint JSub_Rations: 					0x123E168, 0x4DC;
+	uint JSub_Kills: 					0x123E168, 0x4E0;
+	uint JSub_Alerts: 					0x123E168, 0x4E4;
+	uint JSub_Saves: 					0x123E168, 0x4EC;
+	uint JSub_Continues: 				0x123E168, 0x4F0;
+	uint JSub_ContinuesPerCheckpoint: 	0x123E168, 0x4F4;
+	// inventory values
+	uint JSub_PistolAmmo: 				0x124291C, 0xB3C;
+	uint JSub_SMGAmmo: 					0x124291C, 0xB40;
+	uint JSub_Grenades: 				0x124291C, 0xB44;
+	uint JSub_StingerMissiles: 			0x124291C, 0xB48;
+	uint JSub_RCMissiles: 				0x124291C, 0xB4C;
+	uint JSub_PlasticExplosives: 		0x124291C, 0xB50;
+	uint JSub_Mines: 					0x124291C, 0xB54;
+	uint JSub_CamoMats: 				0x124291C, 0xB58;
+	uint JSub_GasGrenadeAmmo: 			0x124291C, 0xB5C;
+	uint JSub_MouseAmmo: 				0x124291C, 0xB60;
+	uint JSub_RationsB1Held: 			0x124291C, 0xB64;
+	uint JSub_RationsB2Held: 			0x124291C, 0xB68;
+	uint JSub_RationsB3Held: 			0x124291C, 0xB6C;
+	// menu pointer position
+	uint JSub_ActiveWeapon:				0x124291C, 0xB28;
+	uint JSub_ActiveItem:				0x124291C, 0xB2C;
+	uint JSub_WeaponsUpdate:			0x124291C, 0xB30;
+	uint JSub_ItemsUpdate1:				0x124291C, 0xB34;
+	uint JSub_ItemsUpdate2:				0x124291C, 0xB38;
+
+    // Japan - 20th Anniversary Disc
+	// timers
+    uint J20A_GameTime: 				0x123E168, 0x458;
+	uint J20A_ConsoleTime: 				0x123E168, 0x838;
+    uint J20A_GameState: 				0x123E168, 0x5FC;
+	uint J20A_CheckpointFlag:			0x123E168, 0x338;
+	// variables for state and map location
+	uint J20A_MapVal:					0x124291C, 0xB8C;
+	uint J20A_ScreenVal:				0x123E168, 0x6C8;
+	uint J20A_FloorNumber:				0x123E168, 0x780;
+	// snake relevant values
+	uint J20A_HealthUpgrade:			0x124291C, 0xB74;
+	uint J20A_Health: 					0x124291C, 0xB78;
+	uint J20A_MaxHealth: 				0x124291C, 0xB7C;
+	uint J20A_Oxygen: 					0x124291C, 0xB80;
+	int J20A_SnakeXAxis:				0x124291C, 0xBE0;
+	int J20A_SnakeYAxis:				0x124291C, 0xBE4;
+	// score screen
+	uint J20A_Rations: 					0x123E168, 0x45C;
+	uint J20A_Kills: 					0x123E168, 0x460;
+	uint J20A_Alerts: 					0x123E168, 0x464;
+	uint J20A_Saves: 					0x123E168, 0x46C;
+	uint J20A_Continues: 				0x123E168, 0x470;
+	uint J20A_ContinuesPerCheckpoint: 	0x123E168, 0x474;
+	// inventory values
+	uint J20A_PistolAmmo: 				0x124291C, 0xB3C;
+	uint J20A_SMGAmmo: 					0x124291C, 0xB40;
+	uint J20A_Grenades: 				0x124291C, 0xB44;
+	uint J20A_StingerMissiles: 			0x124291C, 0xB48;
+	uint J20A_RCMissiles: 				0x124291C, 0xB4C;
+	uint J20A_PlasticExplosives: 		0x124291C, 0xB50;
+	uint J20A_Mines: 					0x124291C, 0xB54;
+	uint J20A_CamoMats: 				0x124291C, 0xB58;
+	uint J20A_GasGrenadeAmmo: 			0x124291C, 0xB5C;
+	uint J20A_MouseAmmo: 				0x124291C, 0xB60;
+	uint J20A_RationsB1Held: 			0x124291C, 0xB64;
+	uint J20A_RationsB2Held: 			0x124291C, 0xB68;
+	uint J20A_RationsB3Held: 			0x124291C, 0xB6C;
+	// menu pointer position
+	uint J20A_ActiveWeapon:				0x124291C, 0xB28;
+	uint J20A_ActiveItem:				0x124291C, 0xB2C;
+	uint J20A_WeaponsUpdate:			0x124291C, 0xB30;
+	uint J20A_ItemsUpdate1:				0x124291C, 0xB34;
+	uint J20A_ItemsUpdate2:				0x124291C, 0xB38;
+
+    // US
 	// timers
     uint US_GameTime: 				0x123E168, 0xDF0;
 	uint US_ConsoleTime: 			0x123E16C, 0x1D0;
@@ -44,12 +134,12 @@ state("pcsx2") {
 	int US_SnakeXAxis:				0x1243658, 0xC30;
 	int US_SnakeYAxis:				0x1243658, 0xC34;
 	// score screen
+	uint US_Rations: 				0x123E168, 0xDF4;
+	uint US_Kills: 					0x123E168, 0xDF8;
+	uint US_Alerts: 				0x123E168, 0xDFC;
 	uint US_Saves: 					0x123E168, 0xE04;
 	uint US_Continues: 				0x123E168, 0xE08;
 	uint US_ContinuesPerCheckpoint: 0x123E168, 0xE0C;
-	uint US_Alerts: 				0x123E168, 0xDFC;
-	uint US_Kills: 					0x123E168, 0xDF8;
-	uint US_Rations: 				0x123E168, 0xDF4;
 	// inventory values
 	uint US_PistolAmmo: 			0x1243658, 0xB8C;
 	uint US_SMGAmmo: 				0x1243658, 0xB90;
@@ -88,12 +178,12 @@ state("pcsx2") {
 	int EU_SnakeXAxis:				0x1243664, 0xCE0;
 	int EU_SnakeYAxis:				0x1243664, 0xCE4;
 	// score screen
+	uint EU_Rations: 				0x123E174, 0xB2C;
+	uint EU_Kills: 					0x123E174, 0xB30;
+	uint EU_Alerts: 				0x123E174, 0xB34;
     uint EU_Saves: 					0x123E174, 0xB3C;
 	uint EU_Continues: 				0x123E174, 0xB40;
 	uint EU_ContinuesPerCheckpoint: 0x123E174, 0xB44;
-	uint EU_Alerts: 				0x123E174, 0xB34;
-	uint EU_Kills: 					0x123E174, 0xB30;
-	uint EU_Rations: 				0x123E174, 0xB2C;
 	// inventory values
 	uint EU_PistolAmmo: 			0x1243664, 0xC3C;
 	uint EU_SMGAmmo: 				0x1243664, 0xC40;
@@ -275,12 +365,12 @@ update {
 			"Oxygen",
 			"SnakeXAxis",
 			"SnakeYAxis",
+			"Rations",
+			"Kills",
+			"Alerts",
 			"Saves",
 			"Continues",
 			"ContinuesPerCheckpoint",
-			"Alerts",
-			"Kills",
-			"Rations",
 			"PistolAmmo",
 			"SMGAmmo",
 			"Grenades",
