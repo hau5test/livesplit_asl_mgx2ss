@@ -590,7 +590,7 @@ split {
 
 	// as long as we're not on the post Metal Gear D / Big Boss Checkpoint
 	// where items get dropped and picked up again, leading to double splits
-	if(current.EU_CheckpointFlag < 44) {
+	if(current.CheckpointFlag < 44) {
 		// the following block is used to split on weapon pick up or drop (drops usually don't happen)
 		var splitname = "_pickup";
 		// use temp data
