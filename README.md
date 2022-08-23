@@ -13,6 +13,7 @@ Setup video tutorial (same principle for MG2:SS):
 https://www.youtube.com/watch?v=vuQAJS0_XGk
 
 The following ASL Var Viewer Variables are available:
+- Floor             - Current Floor Snake is on (US standard)
 - Rank              - shows the current rank name
 - NGorNGP           - shows if the game is run in New Game or New Game + mode
 - SnakeXAxis        - shows current Snake X position on the screen
@@ -21,7 +22,6 @@ The following ASL Var Viewer Variables are available:
 The following and more ASL Var Viewer States are available:
 - Weapons Collected  - lists how many weapons have been collected
 - Items Collected    - lists how many items have been collected
-- Bosses Beated      - lists how many bosses in total have been beaten
 - Health             - lists Snake's health (Current Health) out of (Max Health)
 
 All key variables for the score screen
