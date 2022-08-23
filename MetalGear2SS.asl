@@ -2,10 +2,13 @@
 /* Metal Gear 2: Solid Snake Autosplitter v1             */
 /*                                                       */
 /* Emulator Compatibility:                               */
-/*  * PCXS2                                              */
+/*  * PCXS2 1.6.0                                        */
 /*                                                       */
 /* Game Compatibility:                                   */
 /*  * Metal Gear PS2 PAL                                 */
+/*  * Metal Gear PS2 NTSC-U                              */
+/*  * Metal Gear PS2 NTSC-J (Subsistence)                */
+/*  * Metal Gear PS2 NTSC-J (20th Anniversary Disc)      */
 /*                                                       */
 /* Created by Hau5test for Metal Gear Solid Speedrunners */
 /*                                                       */
@@ -268,10 +271,9 @@ startup {
 
 	settings.Add("story_splits", true, "Story Flag Splits");
 	settings.Add("green_barret", true, "Finished Green Barret Section", "story_splits");
-	settings.Add("card4_pickup", true, "Met Holly first time (card 4)", "story_splits");
-	settings.Add("card5_pickup", true, "Met Dr. Madnar first time (card 5)", "story_splits");
-	settings.Add("card7_pickup", true, "Fought the four horsemen", "story_splits");
-	settings.Add("owl_hatched", true, "Owl Hatched", "story_splits");
+	settings.Add("card4_pickup", true, "Met Holly first time (card 4 pick up)", "story_splits");
+	settings.Add("card5_pickup", true, "Met Dr. Madnar first time (card 5 pick up)", "story_splits");
+	settings.Add("card6_pickup", true, "Gustava's Death (card 6 pick up)", "story_splits");
 	settings.Add("reached_underground", true, "Reached Underground After Dr. Madnar", "story_splits");
 
 	settings.Add("final_split", true, "Final Split when fade to black finishes");
@@ -293,7 +295,7 @@ startup {
 	settings.Add("silencer_pickup", false, "Split on Silencer Collection" ,"weapons_pickup");
 
 	// Items Pick Up Splits
-	settings.Add("items_pickup", true, "Split on Items Collection");
+	settings.Add("items_pickup", false, "Split on Items Collection");
 	settings.Add("scope_pickup", false, "Split on Binocular Collection","items_pickup");
 	settings.Add("nvg_pickup", false, "Split on Night Vision Goggles Collection","items_pickup");
 	settings.Add("irg_pickup", false, "Split on Infrared Goggles Collection","items_pickup");
@@ -308,25 +310,21 @@ startup {
 	settings.Add("medicine_pickup", false, "Split on Cold Medicine Collection","items_pickup");
 	settings.Add("cassette_pickup", false, "Split on Cassette Collection","items_pickup");
 	settings.Add("egg1_pickup", false, "Split on Egg 1 Collection","items_pickup");
-	settings.Add("egg2_pickup", true, "Split on Owl Egg Collection","items_pickup");
-	settings.Add("brooch_pickup", true, "Split on Brooch Collection","items_pickup");
+	settings.Add("egg2_pickup", false, "Split on Owl Egg Collection","items_pickup");
+	settings.Add("brooch_pickup", false, "Split on Brooch Collection","items_pickup");
 	settings.Add("card1_pickup", false, "Split on Card 1 Collection","items_pickup");
 	settings.Add("card2_pickup", false, "Split on Card 2 Collection","items_pickup");
 	settings.Add("card3_pickup", false, "Split on Card 3 Collection","items_pickup");
 	//settings.Add("card4_pickup", true, "Split on Card 4 Collection","items_pickup"); <- listed as special story split for now
 	//settings.Add("card5_pickup", true, "Split on Card 5 Collection","items_pickup"); <- listed as special story split for now
-	settings.Add("card6_pickup", false, "Split on Card 6 Collection","items_pickup");
+	//settings.Add("card6_pickup", false, "Split on Card 6 Collection","items_pickup"); <- listed as special story split for now
 	//settings.Add("card7_pickup", true, "Split on Card 7 Collection","items_pickup"); <- listed as special story split for now
 	settings.Add("card8_pickup", false, "Split on Card 8 Collection","items_pickup");
 	settings.Add("card9_pickup", true, "Split on Card 9 Collection","items_pickup");
 	settings.Add("cardred_pickup", false, "Split on Red Card Collection","items_pickup");
 	settings.Add("cardblue_pickup", false, "Split on Blue Card Collection","items_pickup");
 	settings.Add("cardgreen_pickup", false, "Split on Green Card Collection","items_pickup");
-	settings.Add("spray_pickup", true, "Split on Spray Collection","items_pickup");
 	settings.Add("oilix_pickup", false, "Split on Cartridge Collection","items_pickup");
-	settings.Add("ration_b1_pickup", false, "Split on Ration B1 Collection","items_pickup");
-	settings.Add("ration_b2_pickup", false, "Split on Ration B2 Collection","items_pickup");
-	settings.Add("ration_b3_pickup", false, "Split on Ration B3 Collection","items_pickup");
 
 
 	settings.Add("bosses_splits", true, "Split on Boss Completion");
@@ -335,10 +333,11 @@ startup {
 	settings.Add("hindd_split", true, "Split on Hind D Completion", "bosses_splits");
 	settings.Add("red_blaster_split", true, "Split on Red Blaster Completion", "bosses_splits");
 	settings.Add("jungle_evil_split", true, "Split on Jungle Evil Completion", "bosses_splits");
+	settings.Add("card7_pickup", true, "Fought the four horsemen", "bosses_splits");
 	settings.Add("night_fright_split", true, "Split on Night Fright Completion", "bosses_splits");
-	settings.Add("metalgeard_split", true, "Split on Night Fright Completion", "bosses_splits");
-	settings.Add("grayfox_split", true, "Split on Night Fright Completion", "bosses_splits");
-	settings.Add("bigboss_split", true, "Split on Night Fright Completion", "bosses_splits");
+	settings.Add("metalgeard_split", true, "Split on Metal Gear D Completion", "bosses_splits");
+	settings.Add("grayfox_split", true, "Split on Gray Fox Completion", "bosses_splits");
+	settings.Add("bigboss_split", true, "Split on Big Boss Completion", "bosses_splits");
 }
 
 update {
