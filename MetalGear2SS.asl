@@ -600,12 +600,12 @@ split {
 			//if the new value is bigger, a weapon got added
 			if(current.WeaponsUpdate > old.WeaponsUpdate) {
 				// get the log of 2 from this new number, so we know which ID to look up
-				lookUpThisWeapon = Convert.ToUInt32(Math.Log(current.WeaponsUpdate - old.WeaponsUpdate), 2);
+				lookUpThisWeapon = Convert.ToUInt32(Math.Log(current.WeaponsUpdate - old.WeaponsUpdate, 2));
 			// if the new value is smaller, a weapon got removed
 			} else {
 				splitname = "_drop";
 				// get the log of 2 from this new number, so we know which ID to look up
-				lookUpThisWeapon = Convert.ToUInt32(Math.Log(old.WeaponsUpdate - current.WeaponsUpdate), 2);
+				lookUpThisWeapon = Convert.ToUInt32(Math.Log(old.WeaponsUpdate - current.WeaponsUpdate, 2));
 			}
 
 			// define string that can contain the value based on dictionary key
