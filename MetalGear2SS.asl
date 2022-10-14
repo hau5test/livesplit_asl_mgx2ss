@@ -579,8 +579,9 @@ isLoading {
 }
 
 start {
-	if (current.GameState != 8 && old.GameState == 8 && old.GameTime == 0) return true;
+	if (old.GameState == 8 && current.GameState == 11) return true;
 }
+
 split {	
 	var D = vars.D;
 
@@ -695,12 +696,7 @@ split {
 	if (old.CheckpointFlag == 46 && current.CheckpointFlag == 47 && settings["bigboss_split"]) return true;
 
 }
-/*
-reset {
-	if((current.BSState == 0) && (current.GameTime == 0) && (current.GameTime != old.GameTime))  return true;
 
-    if ( old.BSState == 5 || (current.BSState != 0 && current.BSState == 0)) {
-		return true;
-    }
+reset {
+	if(current.GameState == 27 && old.GameState == 10) return true;
 }
-*/
