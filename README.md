@@ -1,4 +1,7 @@
-# Livesplit_asl_mgx2ss
+# Livesplit_asl_mgx2ss (deprecated)
+Development has been succeeded by TheDementedSalad here:
+https://github.com/TheDementedSalad/Metal-Gear-2-PS2-Emu-Autosplitter
+
 Metal Gear 2: Solid Snake Autosplitter for PCXS2
 
 Supports the PCXS2 emulator version 1.6.0.
